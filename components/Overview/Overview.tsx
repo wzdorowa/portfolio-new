@@ -10,7 +10,17 @@ const Overview = () => {
     <OverviewWrapper>
       <ContentColumn>
         <Header />
-        <Hero />
+        <Hero
+          title={
+            <>
+              Вероника
+              <br />
+              Здорова
+            </>
+          }
+          withBackButton
+          text="Развиваюсь в сфере дизайна интерфейсов, три года работала фронтенд-разработчиком. Помогу спроектировать дизайн интерфейса и&nbsp;реализовать его в веб-пространстве."
+        />
       </ContentColumn>
 
       <ImageColumn>

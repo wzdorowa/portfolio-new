@@ -4,37 +4,45 @@ import { Typography } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import { styled } from "@mui/material/styles";
+import { ReactNode } from "react";
+import BackButtonIcon from "@/icons/BackButtonIcon";
 
-const Hero = () => {
+const Hero = ({
+  title,
+  text,
+  withBackButton,
+}: {
+  title: string | ReactNode;
+  text: string | ReactNode;
+  withBackButton?: boolean;
+}) => {
   return (
     <HeroWrapper>
-      <MainTitle variant="h1">
-        Вероника
-        <br />
-        Здорова
-      </MainTitle>
+      <MainTitle variant="h1">{title}</MainTitle>
 
       <TextContent>
-        <Typography variant="body1">
-          Развиваюсь в сфере дизайна интерфейсов, три года работала
-          фронтенд-разработчиком. Помогу спроектировать дизайн интерфейса
-          и&nbsp;реализовать его в веб-пространстве.
-        </Typography>
+        <Typography variant="body1">{text}</Typography>
 
-        <ContactsWrapper>
-          <ContactLink href="mailto:w.zdorowa@gmail.com">
-            <EmailIcon />
-            <Typography variant="body2">w.zdorowa@gmail.com</Typography>
-          </ContactLink>
-          <ContactLink
-            href="https://t.me/zdorova_veronika"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <TelegramIcon />
-            <Typography variant="body2">@zdorova_veronika</Typography>
-          </ContactLink>
-        </ContactsWrapper>
+        {withBackButton ? (
+          <BackButtonIconBox>
+            <BackButtonIcon />
+          </BackButtonIconBox>
+        ) : (
+          <ContactsWrapper>
+            <ContactLink href="mailto:w.zdorowa@gmail.com">
+              <EmailIcon />
+              <Typography variant="body2">w.zdorowa@gmail.com</Typography>
+            </ContactLink>
+            <ContactLink
+              href="https://t.me/zdorova_veronika"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TelegramIcon />
+              <Typography variant="body2">@zdorova_veronika</Typography>
+            </ContactLink>
+          </ContactsWrapper>
+        )}
       </TextContent>
     </HeroWrapper>
   );
@@ -52,12 +60,23 @@ const TextContent = styled("div")`
   max-width: 435px;
   display: flex;
   flex-direction: column;
+  align-items: baseline;
   gap: 40px;
 `;
 
 const MainTitle = styled(Typography)`
   font-size: 4.5rem;
   line-height: 1.15;
+`;
+
+const BackButtonIconBox = styled("button")`
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
 `;
 
 const ContactsWrapper = styled("div")`
