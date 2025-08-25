@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { styled } from "@mui/material/styles";
-import Overview from "../components/Overview/Overview";
+import Overview from "../src/components/Overview/Overview";
 
 /**
  * Главная страница приложения
