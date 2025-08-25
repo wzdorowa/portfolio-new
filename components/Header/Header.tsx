@@ -1,10 +1,15 @@
 "use client";
 
+import { FC } from "react";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import Link from "next/link";
 import { styled } from "@mui/material/styles";
 
-const Header = () => {
+/**
+ * Компонент заголовка
+ * Отображает навигационное меню в верхней части страницы
+ */
+const Header: FC = () => {
   return (
     <AppBar position="sticky" color="transparent" elevation={0}>
       <Toolbar>

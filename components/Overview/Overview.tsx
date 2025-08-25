@@ -1,11 +1,16 @@
 "use client";
 
+import { FC } from "react";
 import Image from "next/image";
 import { styled } from "@mui/material/styles";
 import Header from "../Header/Header";
 import Hero from "../Hero/Hero";
 
-const Overview = () => {
+/**
+ * Компонент обзорной секции
+ * Отображает главную секцию с заголовком, навигацией и фотографией
+ */
+const Overview: FC = () => {
   return (
     <OverviewWrapper>
       <ContentColumn>

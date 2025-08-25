@@ -1,20 +1,29 @@
 "use client";
 
+import { FC, ReactNode } from "react";
 import { Typography } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import { styled } from "@mui/material/styles";
-import { ReactNode } from "react";
 import BackButtonIcon from "@/icons/BackButtonIcon";
 
-const Hero = ({
+interface HeroProps {
+  /** Заголовок секции */
+  title: string | ReactNode;
+  /** Основной текст */
+  text: string | ReactNode;
+  /** Флаг для отображения кнопки "Назад" вместо контактов */
+  withBackButton?: boolean;
+}
+
+/**
+ * Компонент Hero секции
+ * Отображает основную информацию с заголовком, текстом и либо контактами, либо кнопкой назад
+ */
+const Hero: FC<HeroProps> = ({
   title,
   text,
   withBackButton,
-}: {
-  title: string | ReactNode;
-  text: string | ReactNode;
-  withBackButton?: boolean;
 }) => {
   return (
     <HeroWrapper>
