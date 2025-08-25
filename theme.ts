@@ -13,12 +13,12 @@ const theme = createTheme({
   typography: {
     fontFamily: ["Montserrat", "Arial", "sans-serif"].join(","),
     h1: {
-      fontWeight: 600,
-      letterSpacing: "-0.02em",
+      fontWeight: 400,
+      lineHeight: 1,
     },
     body1: {
-      fontSize: "1.1rem",
-      lineHeight: 1.6,
+      fontSize: "1rem",
+      lineHeight: 1.7,
       fontWeight: 400,
     },
     body2: {
@@ -32,6 +32,17 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "#FFFFFF",
+        },
+      },
+    },
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          paddingLeft: "0px",
+
+          "@media (min-width: 600px)": {
+            paddingLeft: "0px",
+          },
         },
       },
     },
